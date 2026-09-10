@@ -29,7 +29,7 @@ async def messages(request):
 
     myAdapter = SimpleAdapter()
 
-    context = TurnContext(myAdapteradapter, activity)
+    context = TurnContext(myAdapter, activity)
 
     bot = SimpleBot()
 
