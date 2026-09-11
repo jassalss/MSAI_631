@@ -1,8 +1,0 @@
-Your submission was successful!
-Course: 2026-FALL-1BT-MSAI-631-A01, 2026 Fall - Artificial Intelligence for Human-Computer Interaction (MSAI-631-A01) - First Bi-term
-Assessment: Prototype Simple Traditional Chatbot Project
-
-Submission date: 9/9/26, 4:10 PM (MDT)
-Submission size: 15.5 MB
-Submitter: Simerpreet Jassal
-Confirmation number: 99b28fae7f9d4a81bcf26846647d56c3
