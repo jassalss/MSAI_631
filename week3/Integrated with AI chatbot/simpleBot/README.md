@@ -1,4 +1,4 @@
-## TO run the simple bot
+## TO run the Integrate AI bot (simple bot 2.0)
 
 ### Install required packages via following command
 
