@@ -5,25 +5,24 @@ from azure.ai.textanalytics.aio import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
 
-# Load variables from .env
 load_dotenv()
 
-AZURE_LANGUAGE_ENDPOINT = os.getenv("AZURE_LANGUAGE_ENDPOINT")
-AZURE_LANGUAGE_KEY = os.getenv("AZURE_LANGUAGE_KEY")
+LANGUAGE_ENDPOINT = os.getenv("LANGUAGE_ENDPOINT")
+LANGUAGE_KEY = os.getenv("LANGUAGE_KEY")
 
 
-if not AZURE_LANGUAGE_ENDPOINT:
+if not LANGUAGE_ENDPOINT:
     raise ValueError("AZURE_LANGUAGE_ENDPOINT is missing")
 
-if not AZURE_LANGUAGE_KEY:
+if not LANGUAGE_KEY:
     raise ValueError("AZURE_LANGUAGE_KEY is missing")
 
 
 async def analyze_text(text):
 
     client = TextAnalyticsClient(
-        endpoint=AZURE_LANGUAGE_ENDPOINT,
-        credential=AzureKeyCredential(AZURE_LANGUAGE_KEY)
+        endpoint=LANGUAGE_ENDPOINT,
+        credential=AzureKeyCredential(LANGUAGE_KEY)
     )
 
     try:
