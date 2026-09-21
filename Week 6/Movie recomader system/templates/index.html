@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movie Recommender</title>
+
+    <link rel="stylesheet" href="../static/my_style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">MovieRecommender</div>
+
+      <div class="nav-text">AI-Powered Movie Recommendations</div>
+    </header>
+
+    <main class="container">
+
+      <section class="hero">
+        <h1>Find Your Next Movie</h1>
+
+        <p>
+          Enter a movie you like and our recommendation system will
+          find similar movies.
+        </p>
+
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="movieInput"
+            placeholder="Enter a movie title..."
+          />
+
+          <button id="recommendButton" onclick="getRecommendations()">
+            Recommend Movies
+          </button>
+        </div>
+
+        <!-- Status Message -->
+
+        <div id="statusMessage"></div>
+      </section>
+
+      <section class="recommendations-section">
+        <h2>Recommended Movies</h2>
+
+        <!-- Movies will be inserted here -->
+
+        <div id="recommendations" class="movie-grid"></div>
+      </section>
+    </main>
+
+    <script src="../static/app.js"></script>
+  </body>
+</html>
