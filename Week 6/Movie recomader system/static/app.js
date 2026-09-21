@@ -1,3 +1,5 @@
+// This code is written by referencing AI tools
+// like ChatGPT and google gemini
 const myMovieInput = document.getElementById("movieInput");
 
 const myRecommendButton = document.getElementById("recommendButton");
@@ -5,10 +7,6 @@ const myRecommendButton = document.getElementById("recommendButton");
 const myRecommendationsContainer = document.getElementById("recommendations");
 
 const statusMessage = document.getElementById("statusMessage");
-
-// ==========================================
-// Get Movie Recommendations
-// ==========================================
 
 async function getRecommendations() {
   const movieTitle = movieInput.value.trim();
@@ -25,7 +23,6 @@ async function getRecommendations() {
   myRecommendationsContainer.innerHTML = "";
 
   try {
-    // Send request to Flask backend
     const response = await fetch("/recommend", {
       method: "POST",
 
@@ -38,21 +35,16 @@ async function getRecommendations() {
       }),
     });
 
-    // Convert response to JSON
     const data = await response.json();
 
-    // Check if Flask returned an error
     if (!response.ok) {
       throw new Error(data.error || "Something went wrong.");
     }
 
-    // Display recommendations
     displayRecommendations(data.recommendations);
 
-    // Update status
     statusMessage.textContent = `Recommendations for "${data.movie}"`;
   } catch (error) {
-    // Show error message
     myRecommendationsContainer.innerHTML = `
             <div class="error-message">
                 ${error.message}
@@ -61,20 +53,13 @@ async function getRecommendations() {
 
     statusMessage.textContent = "Unable to get recommendations.";
   } finally {
-    // Enable button again
     recommendButton.disabled = false;
   }
 }
 
-// ==========================================
-// Display Movie Recommendations
-// ==========================================
-
 function displayRecommendations(recommendations) {
-  // Clear existing cards
   myRecommendationsContainer.innerHTML = "";
 
-  // Check if there are no recommendations
   if (!recommendations || recommendations.length === 0) {
     myRecommendationsContainer.innerHTML = `
             <div class="error-message">
@@ -85,13 +70,11 @@ function displayRecommendations(recommendations) {
     return;
   }
 
-  // Create a card for every movie
   recommendations.forEach((movie, index) => {
     const card = document.createElement("div");
 
     card.className = "movie-card";
 
-    // Create movie card HTML
     card.innerHTML = `
 
                 <h3>
@@ -140,7 +123,6 @@ function displayRecommendations(recommendations) {
                 </p>
             `;
 
-    // Add card to page
     myRecommendationsContainer.appendChild(card);
   });
 }
