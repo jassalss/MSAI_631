@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Adaptive AI User Interface</title>
+
+    <link rel="stylesheet" href="../static/css/my_style.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div>
+          <h1>Adaptive AI User Interface</h1>
+
+          <p>Intelligent User Interface</p>
+        </div>
+
+        <button id="themeButton" class="theme-button">Dark Mode</button>
+      </header>
+
+      <main class="main-content">
+        <section class="welcome-card">
+          <h2>Welcome</h2>
+
+          <p>
+            This interface will learn from your interactions and adapt to user
+            settings.
+          </p>
+        </section>
+
+        <section class="features">
+          <div class="feature-card" id="dashboardCard">
+            <div class="icon">📊</div>
+
+            <h3>Dashboard</h3>
+
+            <p>View your personalized dashboard.</p>
+
+            <button class="feature-button" onclick="selectFeature('Dashboard')">
+              Open Dashboard
+            </button>
+          </div>
+
+          <div class="feature-card" id="analyticsCard">
+            <div class="icon">📈</div>
+
+            <h3>Analytics</h3>
+
+            <p>Explore data and user activity.</p>
+
+            <button class="feature-button" onclick="selectFeature('Analytics')">
+              Open Analytics
+            </button>
+          </div>
+
+          <div class="feature-card" id="settingsCard">
+            <div class="icon">⚙️</div>
+
+            <h3>Settings</h3>
+
+            <p>Customize your experience.</p>
+
+            <button class="feature-button" onclick="selectFeature('Settings')">
+              Open Settings
+            </button>
+          </div>
+        </section>
+
+        <!-- Adaptive area -->
+        <section class="adaptive-card">
+          <h2>Adaptive Interface</h2>
+
+          <p id="adaptiveMessage">
+            The interface is currently learning your preferences.
+          </p>
+
+          <div class="status">
+            <span class="status-dot"></span>
+
+            <span id="statusText"> Learning user behavior </span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>AI + HCI + Adaptive User Interface</p>
+      </footer>
+    </div>
+
+    <script src="../static/js/app.js"></script>
+  </body>
+</html>
