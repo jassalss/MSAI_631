@@ -4,16 +4,10 @@ import os
 from my_ml_model import predict_preference
 app = Flask(__name__)
 
-# Get the folder where app.py is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Database will always be created beside app.py
 DATABASE = os.path.join(BASE_DIR, "adaptive_ui.db")
 
-
-# -------------------------------------
-# Connect to SQLite database
-# -------------------------------------
 
 def get_db_connection():
 
@@ -23,10 +17,6 @@ def get_db_connection():
 
     return connection
 
-
-# -------------------------------------
-# Create database
-# -------------------------------------
 
 def initialize_database():
 
@@ -47,19 +37,11 @@ def initialize_database():
     print(DATABASE)
 
 
-# -------------------------------------
-# Home page
-# -------------------------------------
-
 @app.route("/")
 def home():
 
     return render_template("index.html")
 
-
-# -------------------------------------
-# Save interaction
-# -------------------------------------
 
 @app.route("/api/interaction", methods=["POST"])
 def record_interaction():
@@ -96,9 +78,6 @@ def record_interaction():
     })
 
 
-# -------------------------------------
-# Get all interactions
-# -------------------------------------
 
 @app.route("/api/interactions")
 def get_interactions():
@@ -130,9 +109,6 @@ def get_interactions():
     })
 
 
-# -------------------------------------
-# Get user preferences
-# -------------------------------------
 
 @app.route("/api/preferences")
 def get_preferences():
@@ -191,9 +167,7 @@ def get_ml_preference():
 
     return jsonify(result)
 
-# -------------------------------------
-# Start application
-# -------------------------------------
+
 
 if __name__ == "__main__":
 

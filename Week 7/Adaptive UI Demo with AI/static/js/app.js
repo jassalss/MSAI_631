@@ -2,9 +2,7 @@ const themeButton = document.getElementById("themeButton");
 const adaptiveMessage = document.getElementById("adaptiveMessage");
 const statusText = document.getElementById("statusText");
 
-// --------------------------------------------------
-// Send interaction to Flask
-// --------------------------------------------------
+
 
 function sendInteraction(action) {
   fetch("/api/interaction", {
@@ -20,7 +18,6 @@ function sendInteraction(action) {
     .then((data) => {
       console.log("Interaction recorded:", data);
 
-      // Ask ML model for a new prediction
       loadMLPreference();
     })
     .catch((error) => {
@@ -28,9 +25,6 @@ function sendInteraction(action) {
     });
 }
 
-// --------------------------------------------------
-// Dark Mode
-// --------------------------------------------------
 
 themeButton.addEventListener("click", function () {
   document.body.classList.toggle("dark");
@@ -46,9 +40,6 @@ themeButton.addEventListener("click", function () {
   }
 });
 
-// --------------------------------------------------
-// Feature selection
-// --------------------------------------------------
 
 function selectFeature(featureName) {
   adaptiveMessage.textContent =
@@ -61,9 +52,6 @@ function selectFeature(featureName) {
   sendInteraction(featureName);
 }
 
-// --------------------------------------------------
-// Highlight preferred feature
-// --------------------------------------------------
 
 function highlightPreferredFeature(featureName) {
   // Remove old highlight
@@ -81,9 +69,7 @@ function highlightPreferredFeature(featureName) {
   }
 }
 
-// --------------------------------------------------
-// Get ML prediction from Flask
-// --------------------------------------------------
+
 
 function loadMLPreference() {
   fetch("/api/ml-preference")
@@ -137,9 +123,6 @@ function loadMLPreference() {
     });
 }
 
-// --------------------------------------------------
-// Load ML prediction when page opens
-// --------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
   loadMLPreference();

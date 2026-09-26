@@ -132,7 +132,7 @@ def predict_preference():
             "accuracy": 0
         }
 
-    # Train Decision Tree
+  
     model, accuracy = train_model()
 
     # Current user's behavior
@@ -142,7 +142,6 @@ def predict_preference():
         settings
     ]]
 
-    # Ask the ML model for a prediction
     prediction = model.predict(user_data)[0]
 
     print("ML prediction:", prediction)
