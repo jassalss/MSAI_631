@@ -1,4 +1,4 @@
-## TO run the movie recommender system 
+## TO run the Recommender System
 
 ### Install required packages via following command
 
