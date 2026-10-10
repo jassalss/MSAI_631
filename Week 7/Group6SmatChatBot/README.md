@@ -1,5 +1,5 @@
----
-title: Group6SmatChatBot
+
+# Title: Group6 Smart Chat Bot
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
