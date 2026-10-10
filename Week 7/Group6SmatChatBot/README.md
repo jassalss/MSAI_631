@@ -1,7 +1,6 @@
 
 # Title: Group6 Smart Chat Bot
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
 ## Running the application in browser
 
